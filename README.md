@@ -1,52 +1,48 @@
-# Lesson 01: Java Basics ☕
+# Lesson 02: Conditionals & Loops 🔄
 
-Welcome to your first step in learning Java! Before we can make selenium click buttons or read text from a website, we need to understand how Java stores information and manipulates data. 
+Now that you know how to store data in variables, it's time to give your code a brain! Right now, your code runs strictly from top to bottom. In this lesson, we will learn how to make decisions and repeat actions.
 
 In this lesson, we will cover:
-1. **Variables & Data Types** (String, int, boolean)
-2. **Basic Operators** (Assignment, Arithmetic, and Comparison)
+1. **Conditionals** (`if`, `else if`, `else`)
+2. **Loops** (The `for` loop)
 
 ---
 
 ## 📖 Concept Breakdown
 
-### 1. Variables & Data Types
-Think of a **variable** as a labeled storage box. Inside the box goes your data. The **data type** tells Java what *kind* of data is allowed inside that box.
+### 1. Conditionals (`if / else`)
+Conditionals allow your program to execute certain blocks of code only if a specific condition evaluates to `true`.
 
-* **`String`**: Used for text. Must be enclosed in double quotes `" "`. 
-  * *Automation Example:* Storing a username, password, or page title.
-* **`int`** (Integer): Used for whole numbers (positive or negative, no decimals).
-  * *Automation Example:* Storing the number of items in a shopping cart or a countdown timer.
-* **`boolean`**: Can only hold two values: `true` or `false`.
-  * *Automation Example:* Checking if a login button is visible (`true`) or if an error message is displayed (`false`).
+* **`if`**: The initial gateway. "If this condition is true, do this."
+* **`else if`**: A secondary check. "If the first thing wasn't true, try checking this condition instead."
+* **`else`**: The safety net. "If none of the above conditions were true, do this by default."
+* *Automation Example:* **If** the user is locked out, verify the error message appears. **Else**, verify the dashboard inventory page loads.
 
-### 2. Basic Operators
-Operators are symbols that let you perform actions on your variables.
-* **Assignment (`=`)**: Puts a value inside a variable. (e.g., `String name = "Standard_user";`)
-* **Arithmetic (`+`, `-`)**: Standard math. In Java, `+` is also used to join text strings together (Concatenation).
-* **Comparison (`==`, `!=`)**: Used to compare two values. 
-  * `==` checks if two things are equal.
-  * `!=` checks if two things are *not* equal.
+### 2. Loops (`for` loops)
+Loops allow you to repeat a block of code a set number of times without rewriting it.
+* A `for` loop uses a counter variable (usually `i`), a target limit, and an increment step (like `i++` which means add 1).
+* *Automation Example:* Looping through all 6 product inventory titles displayed on Saucedemo to check if any of them say "Sauce Labs Backpack".
 
 ---
 
 ## 💻 Code Example
 
-Switch to your VNC GUI browser tab. Open the file located at:
-📁 `src/test/java/lessons/Lesson01Basics.java`
+Open your working file located at:
+📁 `src/test/java/lessons/Lesson02ConditionalsLoops.java`
 
-You will see how we declare these variables and print them out to the console using `System.out.println()`.
+Look closely at how the logic gates evaluate boolean values and how the loop increments its counter.
 
 ---
 
-## 🎯 Your Challenge: Help Fix the Saucedemo Script!
+## 🎯 Your Challenge: Inventory Counter & System Verification!
 
-Your assignment is inside `Lesson01Basics.java`. Some variables are missing, and some values are incorrect, causing our automated checks to fail.
+Your assignment is inside `Lesson02ConditionalsLoops.java`. We are mimicking an item parsing engine for the Saucedemo store, but the conditions are incomplete and the inventory loop is broken.
 
 ### Instructions:
-1. Open `src/test/java/lessons/Lesson01Basics.java` in your Codespace.
-2. Scroll down to the `// TODO` comments.
-3. Fill in the correct data types, fix the username assignment, and complete the comparison logic.
-4. Run your code using the terminal:
+1. Open `src/test/java/lessons/Lesson02ConditionalsLoops.java`.
+2. Scroll down to the `// TODO` checkpoints.
+3. Fix the conditional logic to accurately print matching system alert banners.
+4. Correct the `for` loop parameters so it counts through the virtual items list completely.
+5. Run your test suite using the TestNG configuration engine:
 ```bash
-mvn test -Dtest=Lesson01Basics
+mvn test -q
