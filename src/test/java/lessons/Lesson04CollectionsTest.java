@@ -28,7 +28,7 @@ public class Lesson04CollectionsTest {
         
         // TODO: add indexed call reference and point to the correct value. 
         // Remember, Java arrays are zero-indexed!
-        String firstItem = null;
+        String firstItem = warehouseInventory[0];
 
 
         // TASK 2: Populate a dynamic ArrayList representing a user's shopping cart.
@@ -36,10 +36,11 @@ public class Lesson04CollectionsTest {
         // "Sauce Labs Bike Light" and "Sauce Labs Onesie".
         
         // TODO: Initialize the 'shoppingCart' variable below
-        List<String> shoppingCart = null; 
+        List<String> shoppingCart = new ArrayList<>(); 
 
         // TODO: search for the proper List methods that you can use to add the correct items to the list
-
+        shoppingCart.add("Sauce Labs Bike Light");
+        shoppingCart.add("Sauce Labs Onesie");
 
         // ==========================================
         // 🛑 DO NOT TOUCH THE CODE BELOW 

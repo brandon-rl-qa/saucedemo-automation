@@ -1,46 +1,62 @@
-# Lesson 04: Arrays & Collections 🎒
+# Lesson 05: OOP Basics 🏗️
 
-When automating a website, you often have to deal with multiple things at once. For example, grabbing all the product titles on a page or clicking every checkbox in a form. Storing each title in its own variable (`product1`, `product2`, etc.) would be a nightmare. 
+Welcome to Object-Oriented Programming (OOP)! When automating an e-commerce site like Saucedemo, you interact with specific webpages (like the Login Page, the Inventory Page, and the Cart Page). In Java, we represent these real-world pages as **Classes**, and we create **Objects** out of them inside our tests. 
 
-In this lesson, we will learn how to store groups of data in **Arrays** and **ArrayLists**.
+This concept forms the structural foundation of the **Page Object Model (POM)**—the industry standard design pattern for organizing professional automation frameworks.
 
 In this lesson, we will cover:
-1. **Fixed Arrays** (Static sizes)
-2. **ArrayLists** (Dynamic, flexible collections)
+1. **Classes as Blueprints** (Defining variables and actions for a webpage)
+2. **Objects as Instances** (Creating an actual working copy of that page)
 
 ---
 
 ## 📖 Concept Breakdown
 
-### 1. Arrays (Fixed Size)
-An array is a container object that holds a fixed number of values of a single type. The length of an array is established when it is created and cannot change.
-* Elements inside an array are accessed by their **index**, starting at `0`.
-* *Automation Example:* Storing the predefined list of valid usernames for Saucedemo (`standard_user`, `locked_out_user`).
+### 1. Classes (The Blueprint)
+A class is a template or blueprint used to create objects. It defines what properties the object will have (fields/variables) and what actions it can perform (methods).
 
-### 2. ArrayLists (Dynamic Size)
-An `ArrayList` is a class in Java's Collections framework that acts like an array, but has **no size limit**. You can add or remove items dynamically at runtime.
-* We use `.add()` to insert elements, `.get(index)` to read them, and `.size()` to find out how many items are inside.
-* *Automation Example:* Scraping a shopping cart page to extract whatever items the user decided to add. Because the cart size changes constantly, an `ArrayList` is perfect.
+* *Automation Example:* A `LoginPage` class acts as the master blueprint. It specifies that every login page has a username text field, a password text field, and a `clickLogin()` action.
 
----
+### 2. Objects (The Instance)
+An object is an instance of a class. The class is just the drawing on paper; the object is the actual physical structure built from that drawing. We use the **`new`** keyword to instantiate an object in Java.
 
 ## 💻 Code Example
 
 Open your working file located at:
-📁 `src/test/java/lessons/Lesson04CollectionsTest.java`
+📁 `src/test/java/lessons/Lesson05OOPBasicsTest.java`
 
-Observe how arrays use square brackets `[]` and a fixed length, while `ArrayList` uses regular methods to expand or shrink on the fly.
+Notice that at the bottom of the file, we have defined a miniature, simulated `SauceLoginPage` class blueprint:
 
----
+```java
+static class SauceLoginPage {
+    String username;
+    String password;
 
-## 🎯 Your Challenge: Audit the Inventory Cart!
+    public String performSimulatedLogin() {
+        return "Attempting login for " + username;
+    }
+}
+```
 
-Your assignment is inside `Lesson04CollectionsTest.java`. We are building a verification engine that takes a dynamic list of items chosen by a user and matches it against our static warehouse list. Right now, the lists are misconfigured, causing our automation checks to fail.
+Inside our main test method, we can instantiate an actual object instance of that blueprint, assign its distinct data fields, and trigger its internal action methods like this:
+
+```java
+SauceLoginPage loginPage = new SauceLoginPage();
+loginPage.username = "standard_user";
+loginPage.password = "secret_sauce";
+loginPage.performSimulatedLogin();
+```
+
+## 🎯 Your Challenge: Instantiate the Login Page Object!
+
+Your assignment is inside `Lesson05OOPBasicsTest.java`. We have defined the blueprint for a login page object at the bottom of the file, but our test execution suite is currently failing because the object is uninitialized (`null`) and its core credential data fields are not configured properly.
 
 ### Instructions:
-1. Open `src/test/java/lessons/Lesson04CollectionsTest.java`.
+1. Open `src/test/java/lessons/Lesson05OOPBasicsTest.java`.
 2. Scroll down to the `// TODO` checkpoints inside the test block.
-3. Fix the array indexing, declare the dynamic shopping list correctly, and populate it with the requested items.
-4. Run your code using the quiet Maven test filter:
+3. Instantiate the page object using the `new` keyword to clear the `null` pointer.
+4. Uncomment the parameter initialization code and assign the object fields to match valid Saucedemo credentials.
+5. Run your code using the quiet Maven test filter to verify everything passes:
+
 ```bash
 mvn test -q
