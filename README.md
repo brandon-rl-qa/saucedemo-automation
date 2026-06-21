@@ -54,7 +54,7 @@ Once you master the Java basics, switch to these branches to start interacting w
 When you are inside your Codespace, you can easily jump to any lesson using the built-in terminal:
 
 1. **Check your current branch:**
-   ```bash
+```bash
    git status
 
 ```
@@ -98,7 +98,3 @@ We are targeting **[Sauce Demo](https://www.saucedemo.com/)**, a realistic, mock
 ---
 
 ⭐ **Don't forget to Star this repository if you find it helpful on your QA Automation journey!**
-
-```
-
-```
