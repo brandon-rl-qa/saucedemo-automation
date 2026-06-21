@@ -1,41 +1,31 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "SauceDemo Automation",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"name": "Automation Training",
 	"image": "mcr.microsoft.com/devcontainers/java:3-25-trixie",
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"installMaven": true,
+			"version": "none",
+			"installMaven": "true",
+			"installGradle": "false"
+		},
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
 			"version": "latest",
-			"mavenVersion": "latest"
+			"noVncVersion": "1.6.0",
+			"password": "noPassword",
+			"webPort": "6080",
+			"vncPort": "5901"
 		},
 		"ghcr.io/kreemer/features/chrometesting:1": {
 			"version": "Stable"
-		},
-		"ghcr.io/devcontainers/features/desktop-lite:1": {
-
-		}
-		// "ghcr.io/devcontainers/features/docker-in-docker:3": {
-		// 	"moby": false
-		// }
-	},
-	"customizations":{
-		"vscode": {
-			"extensions": [
-				
-			]
 		}
 	},
 
 	"forwardPorts": [6080],
-	"portsAttributes": {
-		"6080": {
-		"label": "desktop"
-		}
-	},
-
-	"postCreateCommand": "mvn install && open http://localhost:6080 && mvn test"
-
+    "portsAttributes": {
+        "6080": {
+            "label": "desktop",
+            "onAutoForward": "openPreview" 
+        }
+    },
+    "postCreateCommand": "mvn clean install"
 }
