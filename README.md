@@ -35,8 +35,8 @@ Before writing automation scripts, you need to speak the language. Switch to the
 * **`lesson-01-java-basics`**: Variables, Data Types (String, int, boolean), and Basic Operators.
 * **`lesson-02-conditionals-loops`**: Making decisions in code (`if/else`) and repeating actions (`for` and `while` loops).
 * **`lesson-03-methods`**: How to write reusable blocks of code (functions) and pass data into them.
-* **`lesson-04-oop-basics`**: Introduction to Object-Oriented Programming—Classes, Objects, and Constructors (Crucial for Page Object Model later!).
-* **`lesson-05-collections`**: Working with data structures, specifically `Lists` and arrays to handle multiple web elements.
+* **`lesson-04-collections`**: Working with data structures, specifically `Lists` and arrays to handle multiple web elements.
+* **`lesson-05-oop-basics`**: Introduction to Object-Oriented Programming—Classes, Objects, and Constructors (Crucial for Page Object Model later!).
 
 ### 🌐 Phase 2: Selenium WebDriver Automation
 Once you master the Java basics, switch to these branches to start interacting with the **Saucedemo** website:
@@ -77,6 +77,13 @@ git pull origin lesson-01-java-basics
 Each branch will have its own instructions inside its unique `README.md` file explaining the code and the exercise for that day!
 
 ---
+
+## 🛠️ Running Your Java Tests
+
+All you have to do is just open the terminal and input:
+```bash
+mvn -q test
+```
 
 ## 🛠️ Running Your Automation Tests
 
