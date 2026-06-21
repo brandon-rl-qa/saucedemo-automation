@@ -15,8 +15,7 @@
 			"webPort": "6080",
 			"vncPort": "5901"
 		},
-		"ghcr.io/kreemer/features/chrometesting:1": {
-			"version": "Stable"
+		"ghcr.io/devcontainers/features/common-utils:2": {
 		}
 	},
 
@@ -27,5 +26,5 @@
             "onAutoForward": "openPreview" 
         }
     },
-    "postCreateCommand": "mvn clean install"
+    "postCreateCommand": "bash ./.devcontainer/setup.sh"
 }
