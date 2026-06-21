@@ -55,7 +55,7 @@ When you are inside your Codespace, you can easily jump to any lesson using the 
 
 1. **Check your current branch:**
 ```bash
-   git status
+git status
 
 ```
 
