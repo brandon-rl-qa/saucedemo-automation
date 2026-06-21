@@ -20,7 +20,7 @@ public class Lesson05OOPBasicsTest {
         // Right now, 'loginPage' is null. Use the 'new' keyword to instantiate a SauceLoginPage object.
         
         // TODO: Change 'null' to an instance of SauceLoginPage object
-        SauceLoginPage loginPage = null; 
+        SauceLoginPage loginPage = new SauceLoginPage(); 
 
 
         // TASK 2: Configure the object properties.
@@ -28,9 +28,10 @@ public class Lesson05OOPBasicsTest {
         // the correct values to the object's variables.
         
         // TODO: Set the username property of the loginPage object to "standard_user"
+        loginPage.username = "standard_user";
         
         // TODO: Set the password property of the loginPage object to "secret_sauce"
-
+        loginPage.password = "secret_sauce";
 
         // ==========================================
         // 🛑 DO NOT TOUCH THE CODE BELOW 
