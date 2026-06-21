@@ -8,7 +8,7 @@ public class Lesson02ConditionalsLoopsTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson1")
+    @Test(groups="lesson2",dependsOnGroups = "lesson1")
     public void practicingConditionalsAndLoops() {
         logger.info("--- Starting Lesson 02: Conditionals & Loops ---");
 
@@ -31,10 +31,10 @@ public class Lesson02ConditionalsLoopsTest {
                 systemMessage = "ERROR_BANNER";
             } else if (userState.equals("problem_user")) {
                 // TODO: Assign systemMessage the value "GLITCH_WARNING"
-                
+                systemMessage = "GLITCH_WARNING";
             } else {
                 // TODO: Assign systemMessage the value "DASHBOARD_LOADED"
-                
+                systemMessage = "DASHBOARD_LOADED";
             }
 
             // Store the result for validation
@@ -50,7 +50,7 @@ public class Lesson02ConditionalsLoopsTest {
 
         // 🎯 YOUR CHALLENGE: Fix the condition inside the loop below so it loops exactly 6 times
         // Right now, it exits immediately because i < 0 is false.
-        for (int i = 1; i < 0; i++) {
+        for (int i = 0; i < 6; i++) {
             finalLoopCount++;
             logger.info("Scanning inventory shelf item #" + i);
         }

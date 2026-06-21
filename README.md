@@ -1,48 +1,30 @@
-# Lesson 02: Conditionals & Loops 🔄
+# Lesson 03: Methods & Parameters 🛠️
 
-Now that you know how to store data in variables, it's time to give your code a brain! Right now, your code runs strictly from top to bottom. In this lesson, we will learn how to make decisions and repeat actions.
+Up until now, all of our code has lived directly inside a single test method block. As your test suite grows, writing everything in one big block makes your scripts messy, hard to read, and impossible to reuse. 
+
+In this lesson, we will learn how to break our code down into reusable building blocks called **Methods**.
 
 In this lesson, we will cover:
-1. **Conditionals** (`if`, `else if`, `else`)
-2. **Loops** (The `for` loop)
+1. **Method Structure** (Return types and names)
+2. **Method Parameters** (Passing data into a method)
 
 ---
 
 ## 📖 Concept Breakdown
 
-### 1. Conditionals (`if / else`)
-Conditionals allow your program to execute certain blocks of code only if a specific condition evaluates to `true`.
+### 1. Methods
+A method is a collection of code grouped together to perform a specific operation. You can think of it like a recipe: you give it a name, and whenever you call that name, Java runs all the steps inside it.
 
-* **`if`**: The initial gateway. "If this condition is true, do this."
-* **`else if`**: A secondary check. "If the first thing wasn't true, try checking this condition instead."
-* **`else`**: The safety net. "If none of the above conditions were true, do this by default."
-* *Automation Example:* **If** the user is locked out, verify the error message appears. **Else**, verify the dashboard inventory page loads.
+* **`void`**: This keyword means the method performs an action but returns nothing back to you.
+  * *Automation Example:* `public void clickLoginButton()` — It clicks, but doesn't hand back data.
+* **Return Value**: Instead of `void`, you can specify a data type (like `String` or `int`). This means when the method finishes, it hands a piece of data back to you.
+  * *Automation Example:* `public String getPageTitle()` — It grabs the text and hands it back to your test for validation.
 
-### 2. Loops (`for` loops)
-Loops allow you to repeat a block of code a set number of times without rewriting it.
-* A `for` loop uses a counter variable (usually `i`), a target limit, and an increment step (like `i++` which means add 1).
-* *Automation Example:* Looping through all 6 product inventory titles displayed on Saucedemo to check if any of them say "Sauce Labs Backpack".
+### 2. Parameters
+Parameters are variables listed inside the method’s parentheses `()`. They act as placeholders for data that the method needs to do its job.
 
----
-
-## 💻 Code Example
-
-Open your working file located at:
-📁 `src/test/java/lessons/Lesson02ConditionalsLoops.java`
-
-Look closely at how the logic gates evaluate boolean values and how the loop increments its counter.
-
----
-
-## 🎯 Your Challenge: Inventory Counter & System Verification!
-
-Your assignment is inside `Lesson02ConditionalsLoops.java`. We are mimicking an item parsing engine for the Saucedemo store, but the conditions are incomplete and the inventory loop is broken.
-
-### Instructions:
-1. Open `src/test/java/lessons/Lesson02ConditionalsLoops.java`.
-2. Scroll down to the `// TODO` checkpoints.
-3. Fix the conditional logic to accurately print matching system alert banners.
-4. Correct the `for` loop parameters so it counts through the virtual items list completely.
-5. Run your test suite using the TestNG configuration engine:
-```bash
-mvn test -q
+* *Automation Example:* Think of a login method. It needs a username and a password to work. We pass those in as parameters:
+  ```java
+  public void login(String username, String password) {
+      // Logic to type into the fields goes here
+  }
