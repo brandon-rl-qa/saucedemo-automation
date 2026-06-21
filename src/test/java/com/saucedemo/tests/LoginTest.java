@@ -9,6 +9,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLogin() {
+        logger.info("Starting testLogin");
         LoginPage login = new LoginPage(driver);
         InventoryPage inventory = login.open().loginAs("standard_user", "secret_sauce");
         Assert.assertTrue(inventory.isInventoryVisible(), "Inventory list should be visible after login");
