@@ -1,30 +1,46 @@
-# Lesson 03: Methods & Parameters 🛠️
+# Lesson 04: Arrays & Collections 🎒
 
-Up until now, all of our code has lived directly inside a single test method block. As your test suite grows, writing everything in one big block makes your scripts messy, hard to read, and impossible to reuse. 
+When automating a website, you often have to deal with multiple things at once. For example, grabbing all the product titles on a page or clicking every checkbox in a form. Storing each title in its own variable (`product1`, `product2`, etc.) would be a nightmare. 
 
-In this lesson, we will learn how to break our code down into reusable building blocks called **Methods**.
+In this lesson, we will learn how to store groups of data in **Arrays** and **ArrayLists**.
 
 In this lesson, we will cover:
-1. **Method Structure** (Return types and names)
-2. **Method Parameters** (Passing data into a method)
+1. **Fixed Arrays** (Static sizes)
+2. **ArrayLists** (Dynamic, flexible collections)
 
 ---
 
 ## 📖 Concept Breakdown
 
-### 1. Methods
-A method is a collection of code grouped together to perform a specific operation. You can think of it like a recipe: you give it a name, and whenever you call that name, Java runs all the steps inside it.
+### 1. Arrays (Fixed Size)
+An array is a container object that holds a fixed number of values of a single type. The length of an array is established when it is created and cannot change.
+* Elements inside an array are accessed by their **index**, starting at `0`.
+* *Automation Example:* Storing the predefined list of valid usernames for Saucedemo (`standard_user`, `locked_out_user`).
 
-* **`void`**: This keyword means the method performs an action but returns nothing back to you.
-  * *Automation Example:* `public void clickLoginButton()` — It clicks, but doesn't hand back data.
-* **Return Value**: Instead of `void`, you can specify a data type (like `String` or `int`). This means when the method finishes, it hands a piece of data back to you.
-  * *Automation Example:* `public String getPageTitle()` — It grabs the text and hands it back to your test for validation.
+### 2. ArrayLists (Dynamic Size)
+An `ArrayList` is a class in Java's Collections framework that acts like an array, but has **no size limit**. You can add or remove items dynamically at runtime.
+* We use `.add()` to insert elements, `.get(index)` to read them, and `.size()` to find out how many items are inside.
+* *Automation Example:* Scraping a shopping cart page to extract whatever items the user decided to add. Because the cart size changes constantly, an `ArrayList` is perfect.
 
-### 2. Parameters
-Parameters are variables listed inside the method’s parentheses `()`. They act as placeholders for data that the method needs to do its job.
+---
 
-* *Automation Example:* Think of a login method. It needs a username and a password to work. We pass those in as parameters:
-  ```java
-  public void login(String username, String password) {
-      // Logic to type into the fields goes here
-  }
+## 💻 Code Example
+
+Open your working file located at:
+📁 `src/test/java/lessons/Lesson04CollectionsTest.java`
+
+Observe how arrays use square brackets `[]` and a fixed length, while `ArrayList` uses regular methods to expand or shrink on the fly.
+
+---
+
+## 🎯 Your Challenge: Audit the Inventory Cart!
+
+Your assignment is inside `Lesson04CollectionsTest.java`. We are building a verification engine that takes a dynamic list of items chosen by a user and matches it against our static warehouse list. Right now, the lists are misconfigured, causing our automation checks to fail.
+
+### Instructions:
+1. Open `src/test/java/lessons/Lesson04CollectionsTest.java`.
+2. Scroll down to the `// TODO` checkpoints inside the test block.
+3. Fix the array indexing, declare the dynamic shopping list correctly, and populate it with the requested items.
+4. Run your code using the quiet Maven test filter:
+```bash
+mvn test -q

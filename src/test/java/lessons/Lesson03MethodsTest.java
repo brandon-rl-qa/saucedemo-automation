@@ -30,7 +30,7 @@ public class Lesson03MethodsTest {
         double taxAmount = 2.40;
         
         // TODO: Pass itemPrice and taxAmount as arguments inside the parentheses below
-        double finalReceiptTotal = calculateTotalPrice(0,0); 
+        double finalReceiptTotal = calculateTotalPrice(itemPrice,taxAmount); 
 
 
         // ==========================================
@@ -56,13 +56,13 @@ public class Lesson03MethodsTest {
 
     // TODO: Fix this method so it returns the expected String instead of empty text
     private String getStoreName() {
-        return null;
+        return "Saucedemo Official Store";
     }
 
     // TODO: Correct this method signature to accept two 'double' parameters: basePrice and tax
     // Then, make it return the sum of those two values combined!
-    private double calculateTotalPrice(int basePrice, int tax) {
+    private double calculateTotalPrice(double basePrice, double tax) {
         // Fix the calculation line below to return the actual combined sum
-        return 0;
+        return basePrice+tax;
     }
 }
