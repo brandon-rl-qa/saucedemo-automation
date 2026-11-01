@@ -10,7 +10,7 @@ public class Lesson06JavaCapstoneTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson5") // Keeps our execution hierarchy intact!
+    @Test(groups="lesson6",dependsOnGroups = "lesson5")
     public void runJavaCapstoneChallenge() {
         logger.info("--- 🎓 Starting Phase 1: Java Fundamentals Capstone 🎓 ---");
 
