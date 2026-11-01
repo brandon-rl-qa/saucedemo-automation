@@ -8,7 +8,7 @@ public class Lesson02ConditionalsLoopsTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson1")
+    @Test(groups="lesson2",dependsOnGroups = "lesson1")
     public void practicingConditionalsAndLoops() {
         logger.info("--- Starting Lesson 02: Conditionals & Loops ---");
 
