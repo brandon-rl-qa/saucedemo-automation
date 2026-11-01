@@ -10,7 +10,7 @@ public class Lesson04CollectionsTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson3", groups ="lesson4")
+    @Test(groups="lesson4",dependsOnGroups = "lesson3")
     public void practicingArraysAndLists() {
         logger.info("--- Starting Lesson 04: Arrays & Collections ---");
 
