@@ -32,11 +32,12 @@ public class Lesson07SeleniumSetupTest {
 
             // TASK 1: Navigate to the Saucedemo website.
             // TODO: Use driver.get() to navigate to "https://www.saucedemo.com"
-            // driver.get("");
+            String url = "https://www.saucedemo.com/";
+            driver.get(url);
 
             // TASK 2: Retrieve the page title.
             // TODO: Use driver.getTitle() to grab the browser tab's title text and assign it to the variable below.
-            String actualPageTitle = "";
+            String actualPageTitle = driver.getTitle();
 
             // ==========================================
             // 🛑 DO NOT TOUCH THE CODE BELOW 
