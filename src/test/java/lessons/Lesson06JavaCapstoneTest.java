@@ -10,23 +10,23 @@ public class Lesson06JavaCapstoneTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson5")
+    @Test(dependsOnGroups = "lesson5") // Keeps our execution hierarchy intact!
     public void runJavaCapstoneChallenge() {
         logger.info("--- 🎓 Starting Phase 1: Java Fundamentals Capstone 🎓 ---");
+
+        // 1. Setting up our simulated inventory pool
+        SauceItem item1 = new SauceItem("Sauce Labs Backpack", 29.99);
+        SauceItem item2 = new SauceItem("Sauce Labs Bolt T-Shirt", 15.99);
+        SauceItem item3 = new SauceItem("Sauce Labs Fleece Jacket", 49.99);
+
+        // 2. Creating a user cart with items 1 and 3
+        List<SauceItem> customerCart = new ArrayList<>();
+        customerCart.add(item1);
+        customerCart.add(item3);
 
         // ==========================================
         // 🎯 YOUR CHALLENGE STARTS HERE
         // ==========================================
-
-        // TODO: Set up a simulated inventory pull with instances of SauceItem
-        SauceItem item1 = null;
-        SauceItem item2 = null;
-        SauceItem item3 = null;
-
-        // TODO: Create a customerCart list with items 1 and 3 (consider the list to be of SauceItem objects)
-        
-
-        
         
         // TODO: Complete the logic inside the processOrder() method below so that it 
         // processes the customerCart and applies the coupon code accurately.
@@ -38,7 +38,7 @@ public class Lesson06JavaCapstoneTest {
         // 🛑 DO NOT TOUCH THE CODE BELOW 
         // Validation rules to pass the capstone milestone!
         // ==========================================
-        logger.info("--- Evaluating Capstone Solutions ---");
+        logger.info("\n--- Evaluating Capstone Solutions ---");
         
         // Verification 1: Did the engine calculate the base items and handle the coupon rule?
         // Item 1 (29.99) + Item 3 (49.99) = 79.98. Since 79.98 > 40.00, coupon "THANKYOU" cuts $5.00 -> 74.98
