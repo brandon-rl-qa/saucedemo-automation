@@ -8,7 +8,7 @@ public class Lesson03MethodsTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson2", groups = "lesson3") // Preserves the clean cross-class order execution sequence!
+    @Test(groups="lesson3",dependsOnGroups = "lesson2")
     public void practicingMethods() {
         logger.info("--- Starting Lesson 03: Methods & Parameters ---");
 

@@ -8,7 +8,7 @@ public class Lesson05OOPBasicsTest {
 
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test(dependsOnGroups = "lesson4", groups = "lesson5")
+    @Test(groups="lesson5",dependsOnGroups = "lesson4")
     public void practicingOOPBasics() {
         logger.info("--- Starting Lesson 05: OOP Basics ---");
 
