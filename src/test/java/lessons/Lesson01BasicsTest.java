@@ -8,7 +8,7 @@ public class Lesson01BasicsTest {
  
     private Logger logger = Logger.getLogger(getClass());
 
-    @Test
+    @Test(groups="lesson1")
     public void practicingJavaBasics() {
         logger.info("Starting Lesson 01: Java Basics");
 
