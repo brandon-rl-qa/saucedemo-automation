@@ -65,18 +65,25 @@ public class Lesson06JavaCapstoneTest {
      */
     public double processOrder(List<SauceItem> cart, String couponCode) {
         double subtotal = 0.0;
+        double total = 0;
 
         // TODO STEP A: Loop through every item in the cart, add its price to the subtotal, 
         // and if an item's price is greater than 20.00, use logger.info() to print: "[PREMIUM ITEM] " + item.name
-        
+        for (SauceItem sauceItem : cart) {
+            subtotal += sauceItem.price;
+        }
 
         // TODO STEP B: Apply coupon logic rules. 
         // If couponCode is equal to "THANKYOU" AND the calculated subtotal is greater than 40.00, 
         // deduct 5.00 from the final total. Otherwise, make no changes.
-        
+        if (couponCode.equalsIgnoreCase("thankyou")&&subtotal>40.00) {
+            total = subtotal-5.00;
+        }else{
+            total = subtotal;
+        }
 
         // Fix the return statement below to return your real calculation total
-        return 0.0; 
+        return total; 
     }
 
     // ==========================================
